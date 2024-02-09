@@ -1,6 +1,6 @@
 /**
  * autocomplete
- * @param {HTMLElement|Element|HTMLInputElement|HTMLTextAreaElement|null} inp
- * @param {string[]} arr
+ * @param {HTMLElement|Element|HTMLInputElement|HTMLTextAreaElement|null} input
+ * @param {string[]} arrayData
  */
-export default function autocomplete(inp: HTMLElement | Element | HTMLInputElement | HTMLTextAreaElement | null, arr: string[]): void;
+export default function autocomplete(input: HTMLElement | Element | HTMLInputElement | HTMLTextAreaElement | null, arrayData: string[]): void;
