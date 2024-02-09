@@ -64,8 +64,10 @@ export default function autocomplete(input, arrayData, wildcard) {
       b = document.createElement('DIV');
       /*make the matching letters bold:*/
       b.innerHTML = '';
-      b.innerHTML += '<b>' + line.substring(0, keyword.length) + '</b>';
-      b.innerHTML += line.substring(keyword.length);
+      /* print output string */
+      // b.innerHTML += '<b>' + line.substring(0, keyword.length) + '</b>';
+      // b.innerHTML += line.substring(keyword.length);
+      b.innerHTML += line.replace(new RegExp(keyword, 'gim'), '<b>' + keyword + '</b>');
       /*insert a input field that will hold the current array item's value:*/
       b.innerHTML += "<input type='hidden' value='" + line + "'>";
       /*execute a function when someone clicks on the item value (DIV element):*/
