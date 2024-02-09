@@ -62,6 +62,15 @@ for (let i = 0; i < 1000; i++) {
 autocomplete(document.getElementById('myInput'), randomData);
 ```
 
+description
+
+```js
+autocomplete(inputElement, arrayStringToSearch, wildcard)
+```
+
+- `wildcard` will split your input without vowels and match them
+- `arrayString` the array to search from your input
+
 ## Development
 
 open 1st terminal
