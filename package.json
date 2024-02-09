@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "serve": "node serve.js",
+    "serve": "node server.js",
     "clean": "rimraf dist/*",
     "build": "npm run js && npm run css",
     "js": "cross-env-shell NODE_ENV=production rollup -c -m",
