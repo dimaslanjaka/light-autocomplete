@@ -50,7 +50,7 @@ in your js
 ```js
 // generate array string random data auto complete
 const randomData = [];
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 1000; i++) {
   randomData.push(
     Array.from(crypto.getRandomValues(new Uint8Array(10))).reduce(
       (s, b) => s + (b % 35).toString(36)[(b % 2) - 1 ? 'toLowerCase' : 'toUpperCase'](),

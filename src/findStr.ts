@@ -9,18 +9,20 @@ export default function findStr(keyword: string, dictionary: string[], wildcard 
   for (let i = 0; i < dictionary.length; i++) {
     const line = dictionary[i];
     const startWith = new RegExp('^' + keyword, 'gmi');
+    const endWith = new RegExp(keyword + '$', 'gmi');
     if (startWith.test(line)) {
+      // find starts with
       result.push(line);
-    }
-    if (wildcard) {
+    } else if (line.includes(keyword)) {
+      // find matches keyword
+      result.push(line);
+    } else if (endWith.test(line)) {
       // find ends with
-      const endWith = new RegExp(keyword + '$', 'gmi');
-      if (endWith.test(line)) {
-        result.push(line);
-      }
+      result.push(line);
+    } else if (wildcard) {
       // find without vowel words
       const chars = keyword.replace(/[aeiou]/gi, '').split('');
-      if (chars.find(kw => line.includes(kw))) result.push(line);
+      if (chars.filter(kw => line.includes(kw)).length > 0) result.push(line);
     }
   }
   return result;
