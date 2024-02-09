@@ -2,6 +2,9 @@
 
 simple input form auto complete
 
+## Features
+- compatible with other frameworks like `bootstrap`
+
 ## Pre-requirements
 - wrapper of `input` must have style `position: relative`
 - `autocomplete=off` in input or textarea
