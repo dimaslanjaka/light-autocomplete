@@ -2,7 +2,18 @@
   "name": "light-autocomplete",
   "version": "1.0.0",
   "description": "light autocomplete input",
-  "main": "index.js",
+  "main": "dist/browser/light-autocomplete.js",
+  "module": "dist/esm/light-autocomplete.js",
+  "types": "dist/esm/types/autocomplete.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/light-autocomplete.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "php -S localhost:4000",
     "clean": "rimraf dist/*",
