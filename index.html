@@ -3,16 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Form Auto Complete</title>
+		<title>Bundled Module - Form Auto Complete</title>
 		<link rel="stylesheet" href="src/style.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
 	</head>
-	<body>
-		<div class="mx-auto mt-4 bg-dark">
+	<body class="bg-dark">
+		<div class="mx-auto mt-4 mb-4 d-flex justify-content-center align-items-center" style="height: 40vh;">
 			<!--Make sure the form has the autocomplete function switched off:-->
-			<form autocomplete="off" action="/action_page.php" class="text-center">
+			<form autocomplete="off" action="/action_page.php">
 				<div class="autocomplete" style="width: 300px">
 					<input
 						id="myInput"
@@ -22,6 +22,14 @@
 						placeholder="Country" />
 				</div>
 			</form>
+		</div>
+		<div class="mb-4 text-white">
+			<ul>
+				<li>
+					<a href="index-without-modular.html">Without modular test</a>
+				</li>
+				<li><a href="index.html">With modular test</a></li>
+			</ul>
 		</div>
     <script src="dist/demo/sample.js"></script>
 	</body>
