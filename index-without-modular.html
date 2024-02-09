@@ -3,17 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test expose</title>
+    <title>Without Module - Form Auto Complete</title>
     <link rel="stylesheet" href="src/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
   </head>
   <body>
-    <script src="dist/browser/iife.js"></script>
+    <script src="dist/browser/light-autocomplete.js"></script>
     <div class="container mt-4">
+      <div class="text-center">
+        <h1>
+          Test expose
+          <code>autocomplete</code>
+          in global window
+        </h1>
+      </div>
       <div class="position-relative mb-4">
         <input type="text" id="myInput" class="form-control" />
       </div>
-      <div>
+      <div class="mb-4">
         <span>
           <code>autocomplete</code>
           in window is:
@@ -23,6 +30,14 @@
             </script>
           </kbd>
         </span>
+      </div>
+      <div class="mb-4 text-white">
+        <ul>
+          <li>
+            <a href="index-without-modular.html">Without modular test</a>
+          </li>
+          <li><a href="index.html">With modular test</a></li>
+        </ul>
       </div>
     </div>
     <script>

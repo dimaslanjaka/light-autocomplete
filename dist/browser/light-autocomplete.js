@@ -1,9 +1,5 @@
-// Light Auto Complete v1.0.0 Copyright (c) 2024  and contributors
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global["light-autocomplete"] = factory());
-})(this, (function () { 'use strict';
+var autocomplete = (function () {
+  'use strict';
 
   /**
    * autocomplete
@@ -118,5 +114,5 @@
 
   return autocomplete;
 
-}));
+})();
 //# sourceMappingURL=light-autocomplete.js.map

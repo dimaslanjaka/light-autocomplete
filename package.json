@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "php -S localhost:4000",
     "clean": "rimraf dist/*",
-    "build": "cross-env-shell NODE_ENV=production rollup -c -m",
+    "build": "npm run clean && cross-env-shell NODE_ENV=production rollup -c -m",
     "dev": "cross-env-shell NODE_ENV=production rollup -c -m -w"
   },
   "keywords": [],
