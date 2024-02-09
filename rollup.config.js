@@ -7,7 +7,12 @@ const path = require('path');
 const bundleSize = require('rollup-plugin-bundle-size');
 const { babel } = require('@rollup/plugin-babel');
 const tsconfigBuild = require('./tsconfig.build.json');
-
+const browsersync = require('rollup-plugin-browsersync');
+/** @type {import('@rollup/plugin-typescript').RollupTypescriptOptions} */
+const typescriptRollupOptions = {
+  compilerOptions: tsconfigBuild.compilerOptions,
+  exclude: ['**/__tests__', '**/*.test.ts', '**/test/**']
+};
 const lib = require('./package.json');
 const outputFileName = 'light-autocomplete';
 const namedInput = './src/autocomplete.js';
@@ -27,7 +32,7 @@ const buildConfig = ({ es5, browser = true, minifiedVersion = true, ...config })
       file: `${path.dirname(file)}/${basename}.${(minified ? ['min', ...extArr] : extArr).join('.')}`
     },
     plugins: [
-      typescript.default({ compilerOptions: tsconfigBuild.compilerOptions }),
+      typescript.default(typescriptRollupOptions),
       json(),
       resolve({ browser }),
       commonjs(),
@@ -41,6 +46,8 @@ const buildConfig = ({ es5, browser = true, minifiedVersion = true, ...config })
             })
           ]
         : []),
+      browsersync({ server: '.', port: 8080, open: false, cors: true, reloadOnRestart: true, notify: true }),
+      // override plugins
       ...(config.plugins || [])
     ]
   });
@@ -80,11 +87,7 @@ const configFunc = async () => {
         format: 'iife',
         banner
       },
-      plugins: [
-        typescript.default({ compilerOptions: { ...tsconfigBuild.compilerOptions, declaration: false } }),
-        resolve(),
-        commonjs()
-      ]
+      plugins: [typescript.default({ ...typescriptRollupOptions, declaration: false }), resolve(), commonjs()]
     }),
 
     // browser ESM bundle for CDN
