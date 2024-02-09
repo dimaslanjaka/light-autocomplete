@@ -19,7 +19,8 @@ export default function findStr(keyword: string, dictionary: string[], wildcard 
         result.push(line);
       }
       // find without vowel words
-      // const kwn = keyword.replace(/[aeiou]/gi, '');
+      const chars = keyword.replace(/[aeiou]/gi, '').split('');
+      if (chars.find(kw => line.includes(kw))) result.push(line);
     }
   }
   return result;
