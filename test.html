@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test expose</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <script src="dist/browser/iife.js"></script>
+    <div class="container mt-4">
+      <div class="position-relative mb-4">
+        <input type="text" id="myInput" class="form-control" />
+      </div>
+      <div>
+        <span>
+          <code>autocomplete</code>
+          in window is:
+          <kbd>
+            <script>
+              document.write(typeof autocomplete);
+            </script>
+          </kbd>
+        </span>
+      </div>
+    </div>
+    <script>
+      // generate array random data auto complete
+      const randomData = [];
+      for (let i = 0; i < 10000; i++) {
+        randomData.push(
+          Array.from(crypto.getRandomValues(new Uint8Array(10))).reduce(
+            (s, b) => s + (b % 35).toString(36)[(b % 2) - 1 ? 'toLowerCase' : 'toUpperCase'](),
+            ''
+          )
+        );
+      }
+      autocomplete(document.getElementById('myInput'), randomData);
+    </script>
+  </body>
+</html>
