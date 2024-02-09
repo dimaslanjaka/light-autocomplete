@@ -17,8 +17,13 @@
           in global window
         </h1>
       </div>
-      <div class="position-relative mb-4">
-        <input type="text" id="myInput" class="form-control" />
+      <div class="row">
+        <div class="col">
+          <h4 class="text-center">With wildcard</h4>
+          <div class="position-relative mb-4">
+            <input type="text" id="myInput" class="form-control" />
+          </div>
+        </div>
       </div>
       <div class="mb-4">
         <span>
@@ -45,13 +50,12 @@
       const randomData = [];
       for (let i = 0; i < 10000; i++) {
         randomData.push(
-          Array.from(crypto.getRandomValues(new Uint8Array(10))).reduce(
-            (s, b) => s + (b % 35).toString(36)[(b % 2) - 1 ? 'toLowerCase' : 'toUpperCase'](),
-            ''
-          )
+          Math.random()
+            .toString(36)
+            .substring(2, 8 + 2)
         );
       }
-      autocomplete(document.getElementById('myInput'), randomData);
+      autocomplete(document.getElementById('myInput'), randomData, false);
     </script>
   </body>
 </html>
