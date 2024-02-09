@@ -14,12 +14,11 @@ export default function autocomplete(input, arrayData, wildcard) {
   var currentFocus;
   /*execute a function when someone writes in the text field:*/
   input.addEventListener('input', function (e) {
-    var a,
-      b,
-      val = e.target.value;
+    var a, b;
+    const keyword = e.target.value;
     /*close any already open lists of autocompleted values*/
     closeAllLists();
-    if (!val) {
+    if (!keyword) {
       return false;
     }
     currentFocus = -1;
@@ -32,12 +31,12 @@ export default function autocomplete(input, arrayData, wildcard) {
     /*for each item in the array...*/
     // for (let i = 0; i < arrayData.length; i++) {
     //   /*check if the item starts with the same letters as the text field value:*/
-    //   if (arrayData[i].substring(0, val.length).toUpperCase() == val.toUpperCase()) {
+    //   if (arrayData[i].substring(0, keyword.length).toUpperCase() == keyword.toUpperCase()) {
     //     /*create a DIV element for each matching element:*/
     //     b = document.createElement('DIV');
     //     /*make the matching letters bold:*/
-    //     b.innerHTML = '<strong>' + arrayData[i].substring(0, val.length) + '</strong>';
-    //     b.innerHTML += arrayData[i].substring(val.length);
+    //     b.innerHTML = '<strong>' + arrayData[i].substring(0, keyword.length) + '</strong>';
+    //     b.innerHTML += arrayData[i].substring(keyword.length);
     //     /*insert a input field that will hold the current array item's value:*/
     //     b.innerHTML += "<input type='hidden' value='" + arrayData[i] + "'>";
     //     /*execute a function when someone clicks on the item value (DIV element):*/
@@ -51,16 +50,22 @@ export default function autocomplete(input, arrayData, wildcard) {
     //     a.appendChild(b);
     //   }
     // }
-    const dictionaries = findStr(val, arrayData, wildcard);
+    const dictionaries = findStr(keyword, arrayData, wildcard);
+    // .sort((a, b) => {
+    //   const ai = a.indexOf(keyword);
+    //   const bi = b.indexOf(keyword);
+    //   return (ai > -1 && bi > -1 && ai - bi) || -1;
+    // })
+    // .reverse();
     for (let i = 0; i < dictionaries.length; i++) {
       const line = dictionaries[i];
       b = document.createElement('DIV');
       /*create a DIV element for each matching element:*/
       b = document.createElement('DIV');
       /*make the matching letters bold:*/
-      // b.innerHTML = '<strong>' + line.substring(0, val.length) + '</strong>';
       b.innerHTML = '';
-      b.innerHTML += line.substring(val.length);
+      b.innerHTML += '<b>' + line.substring(0, keyword.length) + '</b>';
+      b.innerHTML += line.substring(keyword.length);
       /*insert a input field that will hold the current array item's value:*/
       b.innerHTML += "<input type='hidden' value='" + line + "'>";
       /*execute a function when someone clicks on the item value (DIV element):*/
@@ -74,6 +79,7 @@ export default function autocomplete(input, arrayData, wildcard) {
       a.appendChild(b);
     }
   });
+
   /*execute a function presses a key on the keyboard:*/
   input.addEventListener('keydown', function (e) {
     var x = document.getElementById(e.target.id + 'autocomplete-list');
