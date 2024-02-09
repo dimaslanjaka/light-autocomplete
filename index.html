@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" class="bg-dark text-white">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form Auto Complete</title>
+		<link rel="stylesheet" href="src/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div class="mx-auto mt-4 bg-dark">
+			<!--Make sure the form has the autocomplete function switched off:-->
+			<form autocomplete="off" action="/action_page.php" class="text-center">
+				<div class="autocomplete" style="width: 300px">
+					<input
+						id="myInput"
+						type="text"
+						name="myCountry"
+						class="form-control"
+						placeholder="Country" />
+				</div>
+			</form>
+		</div>
+    <script src="src/sample.js" type="module"></script>
+	</body>
+</html>
