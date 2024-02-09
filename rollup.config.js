@@ -6,7 +6,7 @@ const typescript = require('@rollup/plugin-typescript');
 const path = require('path');
 const bundleSize = require('rollup-plugin-bundle-size');
 const { babel } = require('@rollup/plugin-babel');
-const tsconfigBuild = require('./tsconfig.json');
+const tsconfigBuild = require('./tsconfig.build.json');
 
 const lib = require('./package.json');
 const outputFileName = 'light-autocomplete';

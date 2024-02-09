@@ -50,15 +50,41 @@ in your js
 ```js
 // generate array string random data auto complete
 const randomData = [];
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 1000; i++) {
   randomData.push(
     Array.from(crypto.getRandomValues(new Uint8Array(10))).reduce(
       (s, b) => s + (b % 35).toString(36)[(b % 2) - 1 ? 'toLowerCase' : 'toUpperCase'](),
       ''
     )
+    // Math.random().toString(36).substring(2, 8 + 2) // generate 8 char
   );
 }
 autocomplete(document.getElementById('myInput'), randomData);
 ```
+
+description
+
+```js
+autocomplete(inputElement, arrayStringToSearch, wildcard)
+```
+
+- `wildcard` will split your input without vowels and match them
+- `arrayString` the array to search from your input
+
+## Development
+
+open 1st terminal
+
+```bash
+yarn run dev
+```
+
+open 2nd terminal
+
+```bash
+yarn run serve
+```
+
+access browser to `http://localhost:4000`
 
 [initial project](https://codepen.io/dimaslanjaka/pen/MWxqJRX?editors=1010)

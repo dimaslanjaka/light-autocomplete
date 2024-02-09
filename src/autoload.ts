@@ -8,6 +8,6 @@ import autocomplete from './autocomplete';
 
   // init auto complete
   document.querySelectorAll('[autocomplete=off]').forEach(input => {
-    autocomplete(input, JSON.parse(input.getAttribute('data-autocomplete') || '[]'));
+    autocomplete(input, JSON.parse(input.getAttribute('data-autocomplete') || '[]'), false);
   });
 })();
