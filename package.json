@@ -1,6 +1,6 @@
 {
   "name": "light-autocomplete",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "light autocomplete input",
   "main": "dist/browser/light-autocomplete.js",
   "module": "dist/esm/light-autocomplete.js",
@@ -12,7 +12,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "!dist/demo"
   ],
   "scripts": {
     "serve": "node server.js",
@@ -20,11 +21,24 @@
     "build": "npm run js && npm run css",
     "js": "cross-env-shell NODE_ENV=production rollup -c -m",
     "css": "node style.js",
-    "dev": "cross-env-shell NODE_ENV=production rollup -c -m -w"
+    "dev": "cross-env-shell NODE_ENV=production rollup -c -m -w",
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["autocomplete", "form"],
+  "author": {
+    "name": "Dimas Lanjaka",
+    "email": "dimaslanjaka@gmail.com",
+    "url": "https://webmanajemen.com"
+  },
+  "homepage": "http://www.webmanajemen.com/light-autocomplete/",
+  "repository": {
+    "url": "https://github.com/dimaslanjaka/light-autocomplete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dimaslanjaka/light-autocomplete/issues",
+    "email": "dimaslanjaka@gmail.com"
+  },
+  "license": "MIT",
   "packageManager": "yarn@3.8.0",
   "dependencies": {
     "axios": "^1.6.7",
@@ -75,5 +89,8 @@
   "resolutions": {
     "@babel/core": "^7.0.0",
     "@types/babel__core": "^7.1.9"
+  },
+  "directories": {
+    "test": "test"
   }
 }
