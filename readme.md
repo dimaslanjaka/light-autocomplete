@@ -34,6 +34,14 @@ import js
 <script src="https://rawcdn.githack.com/dimaslanjaka/light-autocomplete/6dab56fc3fdcb5be2c96b4ed3aa7bf5ba1ca2921/dist/browser/light-autocomplete.min.js"></script>
 ```
 
+declare input
+
+```html
+<div style="position: relative;">
+  <input id="myInput" />
+</div>
+```
+
 in your js
 
 ```js
