@@ -17,7 +17,7 @@
   "scripts": {
     "serve": "php -S localhost:4000",
     "clean": "rimraf dist/*",
-    "build": "npm run clean && npm run js && npm run css",
+    "build": "npm run js && npm run css",
     "js": "cross-env-shell NODE_ENV=production rollup -c -m",
     "css": "node style.js",
     "dev": "cross-env-shell NODE_ENV=production rollup -c -m -w"
