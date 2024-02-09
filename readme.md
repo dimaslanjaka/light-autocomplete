@@ -56,6 +56,7 @@ for (let i = 0; i < 10000; i++) {
       (s, b) => s + (b % 35).toString(36)[(b % 2) - 1 ? 'toLowerCase' : 'toUpperCase'](),
       ''
     )
+    // Math.random().toString(36).substring(2, 8 + 2) // generate 8 char
   );
 }
 autocomplete(document.getElementById('myInput'), randomData);
