@@ -61,4 +61,20 @@ for (let i = 0; i < 10000; i++) {
 autocomplete(document.getElementById('myInput'), randomData);
 ```
 
+## Development
+
+open 1st terminal
+
+```bash
+yarn run dev
+```
+
+open 2nd terminal
+
+```bash
+yarn run serve
+```
+
+access browser to `http://localhost:4000`
+
 [initial project](https://codepen.io/dimaslanjaka/pen/MWxqJRX?editors=1010)
