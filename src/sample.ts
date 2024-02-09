@@ -227,4 +227,4 @@ const autoCompleteData = [
   'Zimbabwe'
 ];
 
-autocomplete(document.getElementById('myInput'), autoCompleteData);
+autocomplete(document.getElementById('myInput'), autoCompleteData, false);
