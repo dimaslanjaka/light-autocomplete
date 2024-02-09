@@ -24,7 +24,7 @@ export default function autocomplete(input, arrayData) {
     /*create a DIV element that will contain the items (values):*/
     a = document.createElement('DIV');
     a.setAttribute('id', e.target.id + 'autocomplete-list');
-    a.setAttribute('class', 'autocomplete-items');
+    a.setAttribute('class', 'light-autocomplete-items');
     /*append the DIV element as a child of the autocomplete container:*/
     e.target.parentNode.appendChild(a);
     /*for each item in the array...*/
@@ -83,19 +83,19 @@ export default function autocomplete(input, arrayData) {
     removeActive(x);
     if (currentFocus >= x.length) currentFocus = 0;
     if (currentFocus < 0) currentFocus = x.length - 1;
-    /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add('autocomplete-active');
+    /*add class "light-autocomplete-active":*/
+    x[currentFocus].classList.add('light-autocomplete-active');
   }
   function removeActive(x) {
     /*a function to remove the "active" class from all autocomplete items:*/
     for (var i = 0; i < x.length; i++) {
-      x[i].classList.remove('autocomplete-active');
+      x[i].classList.remove('light-autocomplete-active');
     }
   }
   function closeAllLists(elmnt) {
     /*close all autocomplete lists in the document,
     except the one passed as an argument:*/
-    var x = document.getElementsByClassName('autocomplete-items');
+    var x = document.getElementsByClassName('light-autocomplete-items');
     for (var i = 0; i < x.length; i++) {
       if (elmnt != x[i] && elmnt != input) {
         x[i].parentNode.removeChild(x[i]);

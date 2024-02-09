@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "php -S localhost:4000",
     "clean": "rimraf dist/*",
-    "build": "npm run clean && cross-env-shell NODE_ENV=production rollup -c -m",
+    "build": "npm run clean && npm run js && npm run css",
+    "js": "cross-env-shell NODE_ENV=production rollup -c -m",
+    "css": "node style.js",
     "dev": "cross-env-shell NODE_ENV=production rollup -c -m -w"
   },
   "keywords": [],
@@ -46,6 +48,7 @@
     "rollup": "^4.9.6",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-bundle-size": "^1.0.3",
+    "sass": "^1.70.0",
     "sbg-utility": "^1.1.6",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
