@@ -41,7 +41,7 @@ declare input
 
 ```html
 <div style="position: relative;">
-  <input id="myInput" />
+  <input id="myInput" autocomplete="off" />
 </div>
 ```
 
