@@ -2,11 +2,10 @@
 node_modules
 vendor
 tmp
+
 # yarn
 **/.yarn/cache
 **/.yarn/versions
 **/.yarn/unplug*
 **/.yarn/*.gz
 yarn.lock
-# prerelease
-dist/
