@@ -11,11 +11,26 @@ simple input form auto complete
 
 in your html
 
+import css
+
 ```html
+<!-- import js -->
+<link rel="stylesheet" href="dist/style.css" />
+<!-- or using development cdn -->
+<link rel="stylesheet" href="https://raw.githack.com/dimaslanjaka/light-autocomplete/master/dist/style.css" />
+<!-- or using production cdn (change commit hash) -->
+<link rel="stylesheet" href="https://rawcdn.githack.com/dimaslanjaka/light-autocomplete/6dab56fc3fdcb5be2c96b4ed3aa7bf5ba1ca2921/dist/style.css" />
+```
+
+import js
+
+```html
+<link rel="stylesheet" href="dist/style.css" />
+<!-- import js -->
 <script src="dist/browser/light-autocomplete.js"></script>
 <!-- or using development cdn -->
 <script src="https://raw.githack.com/dimaslanjaka/light-autocomplete/master/dist/browser/light-autocomplete.min.js"></script>
-<!-- or using production cdn -->
+<!-- or using production cdn (change commit hash) -->
 <script src="https://rawcdn.githack.com/dimaslanjaka/light-autocomplete/6dab56fc3fdcb5be2c96b4ed3aa7bf5ba1ca2921/dist/browser/light-autocomplete.min.js"></script>
 ```
 
