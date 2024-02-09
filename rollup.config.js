@@ -62,6 +62,15 @@ const fun = async () => {
   const banner = `// Light Auto Complete v${lib.version} Copyright (c) ${year} ${lib.author} and contributors`;
 
   return [
+    {
+      input: './src/autocomplete.js',
+      es5: true,
+      output: {
+        file: 'dist/browser/iife.js',
+        format: 'iife',
+        name: 'autocomplete'
+      }
+    },
     // bundle release
     ...buildConfig({
       input: './src/autocomplete.js',
@@ -83,7 +92,7 @@ const fun = async () => {
 
     // bundle sample.js
     ...buildConfig({
-      input: './src/js/sample.ts',
+      input: './src/sample.ts',
       minifiedVersion: true,
       es5: true,
       output: {
