@@ -85,6 +85,6 @@ open 2nd terminal
 yarn run serve
 ```
 
-access browser to `http://localhost:4000`
+access browser to `http://localhost:8080`
 
 [initial project](https://codepen.io/dimaslanjaka/pen/MWxqJRX?editors=1010)
