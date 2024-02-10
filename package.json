@@ -17,10 +17,9 @@
   ],
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "npm run js && npm run css",
+    "build": "npm run js",
     "js": "cross-env-shell NODE_ENV=production rollup -c -m",
-    "css": "node style.js",
-    "dev": "cross-env-shell NODE_ENV=production rollup -c -m -w",
+    "dev": "cross-env-shell NODE_ENV=development rollup -c -m -w",
     "start": "npm run dev"
   },
   "keywords": [
